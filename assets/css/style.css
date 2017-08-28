@@ -32,6 +32,9 @@ body {
 h1 {
     color: #fff;
 }
-.bgcolor {
-    background-color: #050f10;
+h2 {
+    color: darkblue;
+}
+.question-answer {
+   color: #ccc;
 }
