@@ -1,0 +1,8 @@
+start button to begin game
+set timer for 120 seconds
+create variables for results: correct / incorrect / unanswered
+create object with questions, 4 possible answers, correct (a1, a2, etc)
+do for loop to display Q&A on screen
+have answers as radio buttons beneath question
+click done to submit answers
+-- if timer reaches zero, game is over & results are tallied based on answers provided

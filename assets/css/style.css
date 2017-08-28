@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        background-image: hide;
+    }
+}
+
+body {
+    background-color: #050f10;
+    background-image: url("../images/bground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right top; 
+}
+h1 {
+    color: #fff;
+}
+.bgcolor {
+    background-color: #050f10;
+}
