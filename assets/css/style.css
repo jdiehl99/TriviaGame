@@ -30,11 +30,19 @@ body {
     background-position: right top; 
 }
 h1 {
-    color: #fff;
+    color: #cd3723;
 }
 h2 {
-    color: darkblue;
+    color: blue;
+    padding-top: 20px;
 }
 .question-answer {
-   color: #ccc;
+   color: white;
+   margin-top: 40px;
+}
+.btn {
+    margin: 20px;
+}
+input[type="radio"] {
+    margin-left: 20px;
 }

@@ -11,26 +11,27 @@ var avengerQuestions = [
 
 
 // create function to do for loop to display Q&A on screen
+// have answers as radio buttons beneath question
 function grabQuestions() {
     $.each(avengerQuestions, function (index, value) {
         console.log(name, value);
         $(".question-answer")
             .append('<h2>' + value.q + '</h2>')
             // answer 1
-            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a1">'+value.a1+' ')
+            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a1"> '+value.a1)
             // answer 2
-            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a2">'+value.a2+' ')
+            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a2"> '+value.a2)
             // answer 3
-            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a3">'+value.a3+' ')
+            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a3"> '+value.a3)
             // answer 4
-            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a4">'+value.a4+' ');
+            .append('<input id="radio' + index + '" type="radio" name="q' + index + '" value="a4"> '+value.a4);
     });
+ // click done to submit answers
+    $(".question-answer").append('<div class="container"><button type="button" class="btn btn-secondary game-done">Submit Answers</button></div>');
 }
 
 
 
-// have answers as radio buttons beneath question
-// click done to submit answers
 
 
 $(document).ready(function () {
