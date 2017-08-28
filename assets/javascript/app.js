@@ -1,4 +1,6 @@
-
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var unanswered = 0;
 
 
 // start button to begin game
@@ -11,7 +13,6 @@
 
 $(document).ready(function() {
 
-
 // set timer for 120 seconds
 setTimeout(timeUp, 1000 * 120);
 
@@ -20,5 +21,9 @@ function timeUp() {
     console.log("time is up");
     alert("time is up");
 }
+
+$(".start-game").on("click",function(){
+console.log("start game was clicked");
+});
 
 });
