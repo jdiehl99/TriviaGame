@@ -1,4 +1,3 @@
-var delayButtonAlert;
 
 
 
@@ -14,11 +13,12 @@ $(document).ready(function() {
 
 
 // set timer for 120 seconds
-setTimeout(timeUp, 1000 * 5);
+setTimeout(timeUp, 1000 * 120);
 
 // out of time, end the game & calculate results
 function timeUp() {
     console.log("time is up");
+    alert("time is up");
 }
 
 });
