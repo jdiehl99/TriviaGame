@@ -36,6 +36,9 @@ h2 {
     color: blue;
     padding-top: 20px;
 }
+.container {
+    color: #fff;
+}
 .question-answer {
    color: white;
    margin-top: 40px;
@@ -45,4 +48,10 @@ h2 {
 }
 input[type="radio"] {
     margin-left: 20px;
+}
+.timer-show {
+    background-color: #4C4CFF;
+    width: 100px;
+    height: 100px;
+    border: 1px solid blue;
 }
