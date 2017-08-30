@@ -12,89 +12,90 @@ var showCorrect = "";
 
 // create object with questions, 4 possible answers, correct (a1, a2, etc)
 var avengerQuestions = [{
-        q: "Which actor plays Iron Man?",
-        a1: "Robert Downey Jr",
-        a2: "Chris Evans",
-        a3: "Hugh Jackman",
-        a4: "Ben Affleck",
-        isright: "a1"
-    },
-    {
-        q: "What realm does Thor call home?",
-        a1: "Vanaheim",
-        a2: "Valhalla",
-        a3: "Alfheim",
-        a4: "Asgard",
-        isright: "a4"
-    },
-    {
-        q: "What color is the hulk?",
-        a1: "Black",
-        a2: "Green",
-        a3: "Red",
-        a4: "Blue",
-        isright: "a2"
-    },
-    {
-        q: "What is Hawkeye's real name?",
-        a1: "Cliff Norton",
-        a2: "Jack Morton",
-        a3: "Clint Barton",
-        a4: "Chase Baker",
-        isright: "a3"
-    },
-    {
-        q: "Where was Black Widow born?",
-        a1: "Berlin",
-        a2: "Moscow",
-        a3: "Leningrad",
-        a4: "Stalingrad",
-        isright: "a4"
-    },
-    {
-        q: "Who played the voice of J.A.R.V.I.S.?",
-        a1: "Paul Bettany",
-        a2: "Jeremy Irons",
-        a3: "Tim Curry",
-        a4: "Sean Connery",
-        isright: "a1"
-    },
-    {
-        q: "What is Dr. Strange's profession?",
-        a1: "Neurosurgeon",
-        a2: "Plastic Surgeon",
-        a3: "Librarian",
-        a4: "Veterinarian",
-        isright: "a1"
-    },
-    {
-        q: "Loki is also known as what?",
-        a1: "Thanos",
-        a2: "Prince Odin",
-        a3: "Sir Pranks a Lot",
-        a4: "God of Mischief",
-        isright: "a4"
-    },
-    {
-        q: "What is the name of Spider-Man's girlfriend?",
-        a1: "Mary-Jane",
-        a2: "Princess",
-        a3: "Jennifer",
-        a4: "Sally Mae",
-        isright: "a1"
-    },
-    {
-        q: "What special power does the Scarlet Witch posess?",
-        a1: "x-ray vision",
-        a2: "super strength",
-        a3: "telekinesis",
-        a4: "invisibility",
-        isright: "3"
-    }
+    q: "Which actor plays Iron Man?",
+    a1: "Robert Downey Jr",
+    a2: "Chris Evans",
+    a3: "Hugh Jackman",
+    a4: "Ben Affleck",
+    isright: "a1"
+},
+{
+    q: "What realm does Thor call home?",
+    a1: "Vanaheim",
+    a2: "Valhalla",
+    a3: "Alfheim",
+    a4: "Asgard",
+    isright: "a4"
+},
+{
+    q: "What color is the hulk?",
+    a1: "Black",
+    a2: "Green",
+    a3: "Red",
+    a4: "Blue",
+    isright: "a2"
+},
+{
+    q: "What is Hawkeye's real name?",
+    a1: "Cliff Norton",
+    a2: "Jack Morton",
+    a3: "Clint Barton",
+    a4: "Chase Baker",
+    isright: "a3"
+},
+{
+    q: "Where was Black Widow born?",
+    a1: "Berlin",
+    a2: "Moscow",
+    a3: "Leningrad",
+    a4: "Stalingrad",
+    isright: "a4"
+},
+{
+    q: "Who played the voice of J.A.R.V.I.S.?",
+    a1: "Paul Bettany",
+    a2: "Jeremy Irons",
+    a3: "Tim Curry",
+    a4: "Sean Connery",
+    isright: "a1"
+},
+{
+    q: "What was Dr. Strange's profession?",
+    a1: "Neurosurgeon",
+    a2: "Plastic Surgeon",
+    a3: "Librarian",
+    a4: "Veterinarian",
+    isright: "a1"
+},
+{
+    q: "Loki is also known as what?",
+    a1: "Thanos",
+    a2: "Prince Odin",
+    a3: "Sir Pranks a Lot",
+    a4: "God of Mischief",
+    isright: "a4"
+},
+{
+    q: "What is the name of Spider-Man's girlfriend?",
+    a1: "Mary-Jane",
+    a2: "Princess",
+    a3: "Jennifer",
+    a4: "Sally Mae",
+    isright: "a1"
+},
+{
+    q: "What special power does the Scarlet Witch posess?",
+    a1: "x-ray vision",
+    a2: "super strength",
+    a3: "telekinesis",
+    a4: "invisibility",
+    isright: "a3"
+}
 ];
 
 
 $(document).ready(function () {
+    $('#restart').hide();
 
     function runCountdown() {
         countdownId = setInterval(timeUp, 1000 * 10);
@@ -142,6 +143,7 @@ $(document).ready(function () {
             runTimer();
             runCountdown();
             // ask next questions from avengerQuestions and increase Q count
+            console.log("question #", usedQ);
             $(".question-answer").html('<h2>' + avengerQuestions[usedQ].q + '</h2>')
                 // answer 1
                 .append('<button class="answer-div" value="a1"> ' + avengerQuestions[usedQ].a1 + '</button><br/>')
@@ -177,11 +179,7 @@ $(document).ready(function () {
                     showCorrect = value;
                 }
             });
-            if (timerSet <= 0) {
-                $(".question-answer").html('<h2>Sorry... time is up</h2>');
-            } else {
-                $(".question-answer").html('<h2>Sorry... that was not right</h2>');
-            }
+            $(".question-answer").html('<h2>Sorry... that was not right</h2>');
             $(".question-answer").append('The correct answer is ' + showCorrect + '<br/>');
         }
         $(".question-answer").append('<img src="assets/images/' + tempQ + '.jpg" alt="">');
@@ -197,7 +195,7 @@ $(document).ready(function () {
         $(".question-answer").append("<p>Correct Answers: " + correctAnswers + "</p>");
         $(".question-answer").append("<p>Incorrect Answers: " + incorrectAnswers + "</p>");
         $(".question-answer").append("<p>Unanswered: " + unanswered + "</p>");
-        $(".question-answer").append('<button type="button" class="btn btn-secondary game-play">Restart Game</button>');
+        $('#restart').show();
     }
 
 
@@ -207,14 +205,36 @@ $(document).ready(function () {
         stopCountdown();
         $('.timer').html('');
         unanswered++;
-        chkAnswer(usedQ, "");
+        tempQ = usedQ - 1;
+        // get correct answer from array
+        var correctA = avengerQuestions[tempQ].isright;
+        $.each(avengerQuestions[tempQ], function (key, value) {
+            if (key == correctA) {
+                showCorrect = value;
+            }
+        });
+        $(".question-answer").html('<h2>Sorry... time is up</h2>');
+        $(".question-answer").append('The correct answer is ' + showCorrect + '<br/>');
+        $(".question-answer").append('<img src="assets/images/' + tempQ + '.jpg" alt="">');
         runDelay();
+        timerSet = 10;
     }
 
     // start button to begin game
     $(".game-play").on("click", function (ev1) {
         $('.gameplay').empty();
+        usedQ = 0;
         grabQuestions();
     });
+
+    // restart button to begin game again
+    $("#restart").on("click", function (ev4) {
+        $('#restart').empty();
+        usedQ = 0;
+        grabQuestions();
+
+    });
+
+    // check on delegate events to keep links from unbinding?
 
 }); // end document ready
