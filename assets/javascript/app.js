@@ -18,7 +18,7 @@ var avengerQuestions = [{
     a3: "Hugh Jackman",
     a4: "Ben Affleck",
     isright: "a1"
-}, /*
+}, 
 {
     q: "What realm does Thor call home?",
     a1: "Vanaheim",
@@ -82,7 +82,7 @@ var avengerQuestions = [{
     a3: "Jennifer",
     a4: "Sally Mae",
     isright: "a1"
-}, */
+}, 
 {
     q: "What special power does the Scarlet Witch posess?",
     a1: "x-ray vision",
@@ -144,7 +144,6 @@ $(document).ready(function () {
             runTimer();
             runCountdown();
             // ask next questions from avengerQuestions and increase Q count
-            console.log("question #", usedQ);
             $(".question-answer").html('<h2>' + avengerQuestions[usedQ].q + '</h2>')
                 // answer 1
                 .append('<button class="answer-div" value="a1"> ' + avengerQuestions[usedQ].a1 + '</button><br/>')
