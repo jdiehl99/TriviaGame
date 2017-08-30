@@ -18,7 +18,7 @@ var avengerQuestions = [{
     a3: "Hugh Jackman",
     a4: "Ben Affleck",
     isright: "a1"
-},
+}, /*
 {
     q: "What realm does Thor call home?",
     a1: "Vanaheim",
@@ -82,7 +82,7 @@ var avengerQuestions = [{
     a3: "Jennifer",
     a4: "Sally Mae",
     isright: "a1"
-},
+}, */
 {
     q: "What special power does the Scarlet Witch posess?",
     a1: "x-ray vision",
@@ -95,7 +95,7 @@ var avengerQuestions = [{
 
 
 $(document).ready(function () {
-    $('#restart').hide();
+    $('.restart').hide();
 
     function runCountdown() {
         countdownId = setInterval(timeUp, 1000 * 10);
@@ -133,6 +133,7 @@ $(document).ready(function () {
     }
 
     function grabQuestions() {
+        $('.restart').hide();
         stopTimer();
         stopDelay();
         $('.timer').html('<span class="timer-show">Time Remaining: ' + timerSet + '</span>');
@@ -195,7 +196,7 @@ $(document).ready(function () {
         $(".question-answer").append("<p>Correct Answers: " + correctAnswers + "</p>");
         $(".question-answer").append("<p>Incorrect Answers: " + incorrectAnswers + "</p>");
         $(".question-answer").append("<p>Unanswered: " + unanswered + "</p>");
-        $('#restart').show();
+        $('.restart').show();
     }
 
 
@@ -228,7 +229,7 @@ $(document).ready(function () {
     });
 
     // restart button to begin game again
-    $("#restart").on("click", function (ev4) {
+    $("#restartbtn").on("click", function (ev4) {
         $('#restart').empty();
         usedQ = 0;
         grabQuestions();
