@@ -43,15 +43,15 @@ h2 {
    color: white;
    margin-top: 40px;
 }
-.btn {
-    margin: 20px;
+.answer-div {
+    background-color: #050f10;
+    color: #fff;
+    border: 0;
 }
-input[type="radio"] {
-    margin-left: 20px;
+.answer-div:hover {
+    background-color: #ccc;
 }
 .timer-show {
-    background-color: #4C4CFF;
     width: 100px;
     height: 100px;
-    border: 1px solid blue;
 }
